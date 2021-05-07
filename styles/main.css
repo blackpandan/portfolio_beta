@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 li {
@@ -11,6 +16,27 @@ li {
 a {
   color: green;
   text-decoration: none;
+}
+
+.overall::before {
+  content: "";
+  background-image: url("../assets/back.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  filter: blur(3px);
+}
+
+.controller {
+  background: linear-gradient(black, rgba(0, 209, 211, 0.6));
+  z-index: 2;
 }
 
 .header {
@@ -24,30 +50,50 @@ a {
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
-  padding: 4vmin;
-  line-height: 6vmin;
+  padding: 2vmin 3vmin 10vmin 3vmin;
+  line-height: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
-.header__controller-text:nth-of-type(1) {
-  margin: 24vmin auto auto auto;
+.header__controller-h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 1.6em;
+  text-align: center;
+  padding: 0 0 5vmin 0;
 }
-.header__controller-text:nth-of-type(1)::first-letter {
-  color: green;
-  font-size: 10vmin;
-}
-.header__controller-text:nth-of-type(1)::second-letter {
-  color: blue;
-  font-size: 6vmin;
+.header__controller-h1::first-letter {
+  font-size: 2em;
 }
 .header__controller-text {
-  font-size: 4vmin;
+  color: white;
+  font-weight: 400;
+  font-size: 1.3em;
   text-align: center;
   text-justify: center;
+}
+@media screen and (min-width: 800px) {
+  .header .header__controller {
+    line-height: 3em;
+  }
+  .header .header__controller-h1 {
+    font-size: 2em;
+  }
+  .header .header__controller-h1::first-letter {
+    font-size: 2.2em;
+  }
+  .header .header__controller-text {
+    font-size: 1.5em;
+  }
 }
 .header__controller2 {
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
+  display: flex;
+  flex-flow: column;
 }
 
 .control {
@@ -59,4 +105,14 @@ a {
 }
 .control__img {
   max-height: 30vmin;
+}
+.control__dec {
+  max-height: 20vmin;
+  align-self: flex-start;
+  margin: 0 0 0 0;
+}
+@media screen and (max-width: 760px) {
+  .control__dec .control__dec {
+    margin: 50vmin 0 0 0;
+  }
 }
