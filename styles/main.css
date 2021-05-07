@@ -20,7 +20,7 @@ a {
 
 .overall::before {
   content: "";
-  background-image: url("../assets/back.jpg");
+  background-image: url("../assets/back.webp");
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center center;
