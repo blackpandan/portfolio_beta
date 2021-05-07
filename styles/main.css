@@ -33,7 +33,24 @@ a {
   z-index: -1;
   filter: blur(3px);
 }
+@media screen and (max-width: 760px) {
+  .overall::before .overall::before {
+    filter: blur(1px);
+  }
+}
 
+.hamburger {
+  color: white;
+  z-index: 5;
+  margin: 5vmin 0 auto 0;
+  font-size: 1.6em;
+}
+
+@media screen and (min-width: 800px) {
+  .hamburger {
+    display: none !important;
+  }
+}
 .controller {
   background: linear-gradient(black, rgba(0, 209, 211, 0.6));
   z-index: 2;
